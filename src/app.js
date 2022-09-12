@@ -16,10 +16,6 @@ app.use(express.json());
 
 app.use(router);
 
-app.get('/', (req, res) => {
-    res.send('tá funcionando')
-})
-
 app.listen(5000, () => {
     console.log('Acessar http://localhost:5000');
     console.log('Servidor executando na porta 5000');
