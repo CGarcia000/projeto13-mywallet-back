@@ -70,7 +70,6 @@ export async function addRegister(req, res) {
 
     if (validation.error) {
         const errors = validation.error.details.map(detail => detail.message);
-        console.log(errors);
         res.status(422).send(errors);
         return;
     }

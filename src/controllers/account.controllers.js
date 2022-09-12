@@ -18,12 +18,10 @@ const signInSchema = joi.object({
 });
 
 export async function createAccount(req, res) {
-    console.log(req.body);
     const validation = accountSchema.validate(req.body, { abortEarly: false });
 
     if (validation.error) {
         const errors = validation.error.details.map(detail => detail.message);
-        console.log(errors);
         res.status(421).send(errors);
         return;
     }
@@ -68,12 +66,10 @@ export async function createAccount(req, res) {
 }
 
 export async function signInAccount(req, res) {
-    console.log(req.body);
     const validation = signInSchema.validate(req.body, { abortEarly: false });
 
     if (validation.error) {
         const errors = validation.error.details.map(detail => detail.message);
-        console.log(errors);
         res.status(421).send(errors);
         return;
     }
